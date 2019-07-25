@@ -1,0 +1,24 @@
+{% extends 'iron2/base.html' %}
+
+{% block body %}
+
+{% if documents.image %}
+<img src="{{ documents.image.url }}" alt="{{ documents.description }}">
+
+{%endif%}
+
+
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Upload</button>
+  </form>
+
+  <p><a href="{% url 'home:home' %}">Return to home</a></p>
+<br>
+{% if documen%}
+{% for documens in documen%}
+<p><a href="{% url 'iron2:pdf_files' id=documens.id %}">{{documens.Filename}}</a></p><br>
+{%endfor%}
+{%endif%}
+{% endblock %}

@@ -1,0 +1,56 @@
+{% extends "blog/base1.html"%}
+ {%block head%}
+    <style>
+        .form{
+            text-align:center;
+         border-radius: 15px 50px;
+        background-color:aquamarine;
+        padding: 70px 20px;
+            width: 500px;
+        height: 400px;
+            margin:100px 37%;
+
+
+
+        }
+
+        body{
+	background-image: url('http://127.0.0.1:8000/media/blog_pictures/o.jpg');
+    background-position: no-repeat; background-attachment: fixed;}
+
+    </style>
+    {%endblock%}
+{% block body%}
+<div class="container">
+<div class="form">
+<form method="post" enctype="multipart/form-data">
+    {%csrf_token%}
+	  <div class="form-row">
+    <p><label for="id_Heading" >Heading:
+    {{form.Heading}} </label></p>
+	</div>
+
+  <label>
+       Choose your image:
+    {{form.Picture}}
+   </label>
+
+	<div class="form-row">
+    <p> <label for="id_caption" >Caption:
+   {{form.caption}} </label></p>
+   </div>
+   <div class="form-row">
+       <p> <label for="id_Blog" >Blog:
+    {{form.Blog}}</label></p>
+	</div>
+	<div class="form-row">
+     <p> <label for="id_type" >Type:
+   {{form.type}}</label></p>
+   </div>
+   <p> <button type="submit">Post</button><br></p>
+
+
+</form>
+    </div>
+	</div>
+{%endblock%}

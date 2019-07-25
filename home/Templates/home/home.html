@@ -1,0 +1,52 @@
+{% extends 'iron2/base.html' %}
+{%block head%}
+
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+ <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+
+{%endblock%}
+{%block body%}
+
+<div class="container" >
+
+
+<div class="col-md-10">
+
+{%for post in posts%}
+<div class="Blogs">
+<h1>{{post.Heading}}</h1><br>
+
+<img src="{{post.Picture.url}}" width="350px" align="center"><br>
+<p>
+<h5>{{content.caption}}</h5>
+</p>
+
+    Author : {{post.user.first_name}}
+    <a href="#">c</a>Comments<br>
+    Posted On : {{post.date}}<br>
+
+
+
+
+<br>
+
+</div>
+
+{%endfor%}
+    </div>
+
+    
+</div>
+
+{%endblock%}

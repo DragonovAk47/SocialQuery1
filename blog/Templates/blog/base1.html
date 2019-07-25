@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {%load static%}
+{%block head%}
+<style type="text/css">
+    body{
+	background-image: url('http://127.0.0.1:8000/media/blog_pictures/o.jpg');
+    background-position: no-repeat; background-attachment: fixed;}
+</style>
+
+
+{%endblock%}
+
+
+	<link href='http://fonts.googleapis.com/css?family=Asap:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+</head>
+<body>
+
+
+
+<br><div class="container">
+
+
+
+<nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="non-collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="{%url 'blog:blog_list'%}">Blog</a>
+          </div>
+
+          <div id="navbar" class="navbar-collapse collapse">
+
+            <ul class="nav navbar-nav navbar-left">
+
+
+
+              <li><a href="{%url 'blog:blog_create'%}">Create Blog</a></li>
+                {%if user.is_authenticated%}
+               <li><a href="{%url 'blog:myblog'%}">My Blog</a></li>
+                {%endif%}
+
+
+               <li><a href="{%url 'blog:blog_list'%}">Blogs</a></li>
+       
+            </ul>
+            <form class="navbar-form navbar-left"  method="get" action="">
+         <div class="form-group">
+        <input type="text" name="q" value="{{request.GET.q}}">
+    </div>
+      <button type="submit" class="btn btn-default">Search</button>
+   
+    </form>
+            <ul class="nav navbar-nav navbar-right">
+                  <li><a href="{%url 'iron2:logout'%}" onclick="alert('Are You Sure')">Logout</a></li>
+                  <li><a href="{%url 'home:home'%}">Home</a></li>
+              </ul>
+          </div>
+
+
+
+
+
+
+          </div>
+
+
+
+
+
+
+</nav>
+            <!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+
+
+
+
+
+
+
+
+{%block body%}
+
+
+{%endblock%}
+
+
+
+
+
+</body>
+</html>

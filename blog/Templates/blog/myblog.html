@@ -1,0 +1,51 @@
+{% extends "blog/base1.html"%}
+{%block head%}
+{%load static%}
+<style type="text/css">
+.Blogs{
+  width: 600px;
+    border: 3px solid green;
+
+    padding-top: 25px;
+	padding-bottom:25px;
+	padding-left:75px;
+	padding-right:25px;
+    margin: 25px;
+	margin-left:27%;
+	background-color:honeydew;
+	}
+	.max{
+	text-align:center;}
+
+body{
+	background-image: url('http://127.0.0.1:8000/media/blog_pictures/o.jpg');
+    background-position: no-repeat; background-attachment: fixed;}
+
+</style>
+{%endblock%}
+{% block body%}
+{%for myblog in myblogs%}
+<div class="Blogs">
+<h1>{{myblog.Heading}}</h1><br>
+
+<img src="{{myblog.Picture.url}}" width="350px" align="center"><br>
+<p>
+<h5>{{myblog.caption}}</h5>
+</p>
+
+    Author : {{myblog.user.first_name}}
+    <a href="#">c</a>Comments<br>
+    Posted On : {{myblog.date}}<br>
+
+<a href="{% url 'blog:blog_full' pk=myblog.pk%}">
+<button type="button" style="color: crimson">View</button></a>
+
+<a href="{% url 'blog:blog_edit' pk=myblog.pk%}">
+<button type="button" style="color: crimson">Edit</button></a>
+
+<br>
+
+</div>
+
+{%endfor%}
+{%endblock%}

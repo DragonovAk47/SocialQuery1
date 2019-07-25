@@ -1,0 +1,12 @@
+{% extends 'iron2/base.html' %}
+{%block body%}
+
+{%for friend in friends%}
+<div class = "row">
+<img src = "{{friend.userprofile.image.url}}" width = "150px" alt = "Image not loaded">&nbsp
+{{friend.username}}
+
+</div>
+<footer>
+{%endfor%}
+{%endblock%}

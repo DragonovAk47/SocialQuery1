@@ -1,0 +1,22 @@
+{% extends 'iron2/base.html' %}
+
+{%block body%}
+<div class="container">
+
+<form method="post">
+    {%csrf_token%}
+    {{form.as_p}}
+     <button type="submit">Post</button>
+     <br>
+
+
+</form>
+
+    {%for image in images%}
+    {% if image.image %}
+    <img src="{{image.image.url}}" width="240">\
+    {%endif%}
+{%endfor%}
+</div>
+
+{%endblock%}

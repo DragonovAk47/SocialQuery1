@@ -1,0 +1,161 @@
+{% load widget_tweaks %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {%load static%}
+
+   <style type="text/css">
+
+      .Blogs{
+  width: 600px;
+    border: 3px solid green;
+  
+    padding-top: 25px;
+  padding-bottom:25px;
+  padding-left:60px;
+  padding-right:25px;
+    margin: 25px;
+  margin-left:25%;
+  background-color:honeydew;
+  }
+      .title{
+	   background-image: url('http://127.0.0.1:8000/media/blog_pictures/back.jpg');
+      
+          padding-bottom:4.1%;}
+
+      .mad{text-align: center;
+      font-style:Italic;
+      text-shadow: beige;}
+      .jumbotron{
+          text-align:center;
+
+      }
+      .maddy{
+          margin-left: 40%;
+      }
+       .maddy{
+          margin-left: 40%;
+      }
+      #id_Website{
+          
+      }
+      .form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+}
+.form-signin .checkbox {
+  font-weight: 400;
+}
+.form-signin .form-control {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+    </style>
+    {%block head%}
+    {%endblock%}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="title">
+
+
+<br>
+
+<h1>QUERYSET</h1><br>
+
+<nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="{%url 'home:home'%}">Social Network</a>
+          </div>
+            {% if user.is_authenticated%}
+          <div id="navbar" class="navbar-collapse collapse">
+
+            <ul class="nav navbar-nav navbar-left">
+              
+
+             
+              <li><a href="{%url 'home:home'%}">Home</a></li>
+              <li><a href="{%url 'home:post_create'%}">Create</a></li>
+               <li><a href="{%url 'iron2:edit_form'%}">Edit Profile</a></li>
+               <li><a href="{%url 'iron2:change_password'%}">Change Password</a></li>
+               <li><a href="{%url 'blog:blog_list'%}">Blog</a></li>
+               <li><a href="{%url 'home:friends_list' pk=user.pk%}">Friends</a></li>
+               <li><a href="{%url 'iron2:profile'%}">Profile</a></li>
+            </ul>
+              <ul class="nav navbar-nav navbar-right">
+                  <li><a href="{%url 'iron2:logout'%}" onclick="alert('Are You Sure')"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+                  <li><a href="{%url 'iron2:reset_password'%}">Reset Password</a></li>
+              </ul>
+          </div>
+
+            {%else%}
+            <div id="navbar" class="navbar-collapse collapse">
+
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="{%url 'iron2:register'%}"><span class="glyphicon glyphicon-user"></span> Register</a></li>
+              <li><a href="{%url 'iron2:login'%}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+              <li><a href="{%url 'blog:blog_list'%}">Blog</a></li>
+
+
+               <li><a href="{%url 'iron2:reset_password'%}">Reset Password</a></li>
+            </ul>
+          </div>
+            {%endif%}
+
+
+
+
+
+
+            <!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+      </nav>
+
+    
+
+
+
+
+
+
+{%block body%}
+
+
+{%endblock%}
+
+</div>
+
+
+
+</body>
+</html>

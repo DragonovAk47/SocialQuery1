@@ -1,0 +1,65 @@
+{%  extends 'iron2/base.html' %}
+
+
+
+
+{%block body%}
+<div class = "container">
+<div class = "row">
+<div class = "col-md-6">
+	<div class ="row">
+		<img src = {{userprofil.image.url}} alt ="Not Loaded" width = "250px" style = "border:1px solid #5377c4; padding:2px">
+    </div>
+<div class = "row">
+
+    <h6>Connection</h6>
+  
+  <div class = "connection" style= "border:1px solid #5377c4; color:lightblue;">
+    you are connected to {{user.username}}
+</div>
+&nbsp
+   <div class = "header1">
+    <h6>Mutual Friends</h6>
+  </div>
+  <div class = "connection" style= "border:1px solid #5377c4; color:lightblue;">
+    you have 2 mutual friends
+</div>
+</div>
+</div>
+<div class = "col-md-6" style = "color:white">
+<list>
+
+<ul><b>Account Info:</b></ul>
+<ul>Name:          {{userprofile.Name}}</ul>
+<ul>Member Since : Not filled</ul>
+<ul>Last Update :  Not Filled</ul>
+<ul><b>Basic Info:</b></ul>
+<ul>School:{{userprofile.School}}</ul>
+<ul>Status:{{userprofile.Status}}</ul>
+<ul>Sex:{{userprofile.Sex}}</ul>
+<ul>Birthday:Not filled</ul>
+<ul>Home Town:{{userprofile.Home_Town}}</ul>
+<ul>High School:{{userprofile.High_School}}</ul>
+<ul><b>Contact Info:</b></ul>
+<ul>Email:{{user.email}}</ul>
+<ul>Username:{{user.username}}</ul>
+<ul>Mobile:{{userprofile.Mobile}}</ul>
+<ul><b>Personal Info:</b></ul>
+<ul>Relationship Status : {{userprofile.relationship_status}}</ul>
+
+<ul>Religion : {{userprofile.religion}}</ul>
+<ul>Looking For:{{userprofile.Looking_For}}</ul>
+<ul>Interested In:{{userprofile.Interested_In}}</ul>
+<ul>Political Views:{{userprofile.Political_Views}}</ul>
+<ul>Interests:{{userprofile.Interests}}</ul>
+<ul>Clubs And Jobs:{{userprofile.Clubs_And_Jobs}}</ul>
+<ul>Favorite Movies:{{userprofile.Favorite_Movies}}</ul>
+
+</list>
+
+</div>
+
+
+</div>
+</div>
+{%endblock%}

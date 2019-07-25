@@ -1,0 +1,17 @@
+{% extends 'iron2/base.html' %}
+
+{%block body%}
+<div class="container">
+
+<form method="post" enctype="multipart/form-data" >
+    <div class="form-class">
+    {%csrf_token%}
+    {{form.as_p}}
+     <button type="submit">Post</button>
+     <br>
+        </div>
+
+</form>
+</div>
+
+{%endblock%}
